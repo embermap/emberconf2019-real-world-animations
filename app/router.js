@@ -7,6 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('show', { path: '/:component_name' });
 });
 
 export default Router;

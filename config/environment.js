@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'emberconf2019-real-world-animations',
+    podModulePrefix: 'emberconf2019-real-world-animations/pods',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -20,6 +21,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    'ember-component-css': {
+      namespacing: false
     }
   };
 
