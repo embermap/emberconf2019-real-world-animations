@@ -10,3 +10,6 @@
 /* .skew-45 {
   transform: skewY(45deg);
 } */
+.transition {
+  transition: all 0.15s;
+}
