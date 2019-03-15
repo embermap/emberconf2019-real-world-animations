@@ -1,6 +1,24 @@
 <section class='max-w-md mx-auto mt-16'>
-  <ul class='list-reset relative'>
-    {{#animated-each (sort-by 'position' items) use=transition duration=1000 as |item|}}
+  {{#sortable-group model=items tagName="ul" class='list-reset relative' onChange=(action "reorderItems") as |group|}}
+    {{#each items as |item|}}
+      {{#sortable-item tagName="li"
+        model=item
+        group=group
+        onDragStart=(action "reorderItems")
+        onDragStop=(action "reorderItems")
+        handle=".handle"
+        class=(concat
+          'w-full rounded shadow text-white p-4 mb-4 z-0 '
+          (concat 'bg-' item.color)
+        )
+      }}
+        {{item.name}}
+        <span class="handle">&varr;</span>
+      {{/sortable-item}}
+    {{/each}}
+  {{/sortable-group}}
+
+    {{!-- {{#animated-each (sort-by 'position' items) use=transition duration=1000 as |item|}}
       <li
         draggable="true"
         class='
@@ -10,6 +28,5 @@
       >
         {{item.name}}
       </li>
-    {{/animated-each}}
-  </ul>
+    {{/animated-each}} --}}
 </section>

@@ -29,6 +29,9 @@ export default Component.extend({
     makeFirst(item) {
       item.set('position', 0);
       this.set('lastClickedItem', item);
+    },
+    reorderItems() {
+      console.log('here!');
     }
   }
 
