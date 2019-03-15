@@ -53,7 +53,6 @@
     "ember-oo-modifiers": "^0.2.2",
     "ember-qunit": "^3.4.1",
     "ember-resolver": "^5.0.1",
-    "ember-sortable": "1.12.3",
     "ember-source": "~3.8.0",
     "ember-tether": "^1.0.0",
     "ember-truth-helpers": "^2.1.0",
