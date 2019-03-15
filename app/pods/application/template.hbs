@@ -1,0 +1,31 @@
+<AnimatedTools @hideUntilKeys="Ctrl-KeyA" />
+
+<div class="flex">
+  <div class="w-64 border-r">
+    <ul class='sticky pin-t list-reset'>
+      <li>
+        {{#link-to 'show' '1-css-only' class='no-underline p-4 text-grey-darkest inline-block border-b w-full' activeClass='bg-grey-lighter'}}
+          1. CSS Only
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'show' '2-modifier-reuse' class='no-underline p-4 text-grey-darkest inline-block border-b w-full' activeClass='bg-grey-lighter'}}
+          2. Modifier reuse
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'show' '3-beacon-shopping-cart' class='no-underline p-4 text-grey-darkest inline-block border-b w-full' activeClass='bg-grey-lighter'}}
+          3. Beacon shopping cart
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to 'show' '4-resortable-list' class='no-underline p-4 text-grey-darkest inline-block border-b w-full' activeClass='bg-grey-lighter'}}
+          4. Resortable list
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
+  <div class='w-full'>
+    {{outlet}}
+  </div>
+</div>

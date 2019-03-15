@@ -1,0 +1,15 @@
+<section class='max-w-md mx-auto mt-16'>
+  <ul class='list-reset relative'>
+    {{#animated-each (sort-by 'position' items) use=transition duration=1000 as |item|}}
+      <li
+        draggable="true"
+        class='
+          w-full bg-{{item.color}}-light rounded shadow text-white p-4 mb-4 z-0
+          {{if (eq item lastClickedItem) 'z-10'}}
+        '
+      >
+        {{item.name}}
+      </li>
+    {{/animated-each}}
+  </ul>
+</section>
