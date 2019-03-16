@@ -3,26 +3,31 @@
 <div class="h-screen flex flex-col">
   <div class="h-full flex">
     <div class="w-64 border-r flex flex-col">
-      <ul class='sticky pin-t list-reset'>
+      <ol class='sticky pin-t list-reset'>
         {{#each (array
-          (hash model='1-css-only' label='1. CSS Only')
-          (hash model='2-modifier-reuse' label='2. Modifier reuse')
-          (hash model='3-resortable-list' label='3. Resortable list')
-          (hash model='4-beacon-shopping-cart' label='4. Beacon shopping cart')
-        ) as |route|}}
+          (hash model='1-css-only' label='CSS Only')
+          (hash model='2-modifier-reuse' label='Modifier reuse')
+          (hash model='3-conditional' label='Conditional')
+          (hash model='4-conditional-2' label='Conditional')
+          (hash model='5-resortable-list' label='Resortable list')
+          (hash model='6-beacon-shopping-cart' label='Beacon shopping cart')
+        ) as |route index|}}
           <li class='relative'>
-            {{#link-to 'show' route.model class='no-underline p-4 pl-5 text-grey-darkest inline-block border-b w-full' activeClass='bg-grey-lighter'}}
-              {{route.label}}
+            {{#link-to 'show' route.model class='no-underline p-4 pl-5 text-grey-darkest inline-block w-full relative z-10'}}
+              {{add index 1}}. {{route.label}}
             {{/link-to}}
 
             {{#animated-if (is-active 'show' route.model) use=activeNavTransition group='nav' duration=250}}
-              <div class='absolute w-2 bg-blue pin-t pin-b'></div>
+              <div class='absolute w-full pin-t pin-b flex'>
+                <div class="w-2 bg-blue"></div>
+                <div class="w-full bg-grey-lighter"></div>
+              </div>
             {{/animated-if}}
           </li>
         {{/each}}
-      </ul>
+      </ol>
 
-      <button class='mt-auto p-4 focus:outline-none' {{action (mut isShowingTools) (not isShowingTools)}}>
+      <button class='mt-auto p-4 focus:outline-none' {{action 'toggleControls'}}>
         Controls
       </button>
     </div>

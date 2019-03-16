@@ -1,7 +1,6 @@
 import Controller from '@ember/controller';
 import move from 'ember-animated/motions/move';
 import scale from 'ember-animated/motions/scale';
-import { fadeOut } from 'ember-animated/motions/opacity';
 import { wait as waitUtil, Motion } from 'ember-animated';
 
 function wait(sprite, opts) {
@@ -16,32 +15,16 @@ class Wait extends Motion {
 
 export default Controller.extend({
 
-  isShowingTools: true,
+  init() {
+    this._super(...arguments);
+
+    this.set('isShowingTools', this.getSession().isShowingTools);
+  },
 
   * transition({ removedSprites }) {
     removedSprites.forEach(sprite => {
       wait(sprite);
     });
-
-    // removedSprites.forEach(sprite => {
-    //   sprite.endAtPixel({ y: window.innerHeight });
-    //   move(sprite);
-    // });
-    // removedSprites.forEach(sprite => {
-    //   // sprite.reveal();
-    //   // fadeOut(sprite);
-    //
-    //   sprite.applyStyles({
-    //     opacity: 1
-    //   });
-    // });
-    // if (removedSprites.length) {
-    //   removedSprites[0].applyStyles({
-    //     opacity: 0.5
-    //     // 'background-color': 'green'
-    //   });
-    // }
-    // yield rAF();
   },
 
   activeNavTransition: function * ({ receivedSprites }) {
@@ -49,6 +32,28 @@ export default Controller.extend({
       move(sprite);
       scale(sprite);
     });
+  },
+
+  getSession() {
+    let defaultSession = { isShowingTools: false };
+    let persistedSession = JSON.parse(window.localStorage.getItem('2019-real-world-animations'));
+
+    return persistedSession || defaultSession;
+  },
+
+  updateSession(key, value) {
+    let session = this.getSession();
+    session[key] = value;
+    window.localStorage.setItem('2019-real-world-animations', JSON.stringify(session));
+  },
+
+  actions: {
+    toggleControls() {
+      let newValue = !this.isShowingTools;
+      
+      this.set('isShowingTools', newValue);
+      this.updateSession('isShowingTools', newValue);
+    }
   }
 
 });
