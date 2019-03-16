@@ -2,9 +2,9 @@
   <ul class='list-reset relative'>
     {{!-- <AnimatedContainer> --}}
       {{!#each items as |item|}}
-      {{#animated-each items use=transition duration=350 as |item index|}}
+      {{#animated-each items use=transition duration=250 as |item index|}}
         <li
-          {{fade-up delay=(mult index 100) duration=1000}}
+          {{fade-up delay=(mult index 50) duration=1000}}
           class='
             w-full bg-{{item.color}}-light rounded shadow text-white p-4 my-4 flex items-center
           '
