@@ -10,7 +10,6 @@ import { task, timeout } from 'ember-concurrency';
 import { toLeft, toRight } from 'ember-animated/transitions/move-over';
 
 let transition = function*({ duration, insertedSprites, removedSprites, beacons }) {
-  console.log(arguments[0]);
   insertedSprites.forEach(sprite => {
     let id = sprite.element.getAttribute('data-animation-id');
 
@@ -21,17 +20,8 @@ let transition = function*({ duration, insertedSprites, removedSprites, beacons 
     fadeIn(sprite);
   });
 
-  // if (removedSprites.length) {
-  //   yield wait(duration);
-  // }
   removedSprites.forEach(sprite => {
-    // console.log(sprite.element);
-    // sprite.endTranslatedBy(sprite.initialBounds.width);
-    // console.log(sprite.initialBounds.width);
-    // sprite.endTranslatedBy(sprite.initialBounds.width, 0);
     sprite.endAtPixel({ x: window.innerWidth });
-    // wait(duration);
-    // fadeOut(sprite);
     fadeIn(sprite);
     move(sprite);
   });
