@@ -1,0 +1,27 @@
+<div class='flex max-w-xl mx-auto p-16'>
+  <div class="w-1/2">
+    <p class='text-lg font-semibold mb-4'>Choose your tags:</p>
+
+    <ul class='list-reset'>
+      {{#each this.tags as |tag|}}
+        <li class='mb-2'>
+          <button {{action 'toggleTag' tag}} class='text-grey-darkest active:text-grey-darkest focus:outline-none'>
+            {{tag}}
+            {{#if (contains tag this.sortedTags)}}
+              <span class='text-blue'>✓</span>
+            {{/if}}
+          </button>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="w-1/2">
+    <p class='text-lg font-semibold mb-4'>My tags:</p>
+
+    {{#animated-each this.sortedTags use=transition duration=300 as |tag|}}
+      <div class='inline-block mr-4 mb-4 text-center px-4 py-3 bg-blue text-white rounded whitespace-no-wrap'>
+        {{tag}}
+      </div>
+    {{/animated-each}}
+  </div>
+</div>

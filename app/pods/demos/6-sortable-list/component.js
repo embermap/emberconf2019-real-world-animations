@@ -3,6 +3,16 @@ import move from 'ember-animated/motions/move';
 
 export default Component.extend({
 
+  // Write your transition here
+
+  * transition({ keptSprites }) {
+    keptSprites.forEach(sprite => {
+      move(sprite);
+    });
+  },
+
+  // ----------------------------------------------
+
   init() {
     this._super(...arguments);
 
@@ -12,12 +22,6 @@ export default Component.extend({
       { id: 3, name: 'C', color: 'green' },
       { id: 4, name: 'D', color: 'purple' },
     ]);
-  },
-
-  * transition({ keptSprites }) {
-    keptSprites.forEach(sprite => {
-      move(sprite);
-    });
   },
 
   actions: {
