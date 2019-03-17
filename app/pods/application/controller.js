@@ -1,7 +1,9 @@
 import Controller from '@ember/controller';
 import move from 'ember-animated/motions/move';
 import scale from 'ember-animated/motions/scale';
+import fade from 'ember-animated/transitions/fade';
 import { wait as waitUtil, Motion } from 'ember-animated';
+import { toUp } from 'ember-animated/transitions/move-over';
 
 function wait(sprite, opts) {
   return new Wait(sprite, opts).run();
@@ -20,6 +22,8 @@ export default Controller.extend({
 
     this.set('isShowingTools', this.getSession().isShowingTools);
   },
+
+  fade,
 
   * transition({ removedSprites }) {
     removedSprites.forEach(sprite => {
@@ -48,9 +52,9 @@ export default Controller.extend({
   },
 
   actions: {
-    toggleControls() {
+    toggleTools() {
       let newValue = !this.isShowingTools;
-      
+
       this.set('isShowingTools', newValue);
       this.updateSession('isShowingTools', newValue);
     }

@@ -1,13 +1,13 @@
 <div class="pt-32 max-w-sm mx-auto">
-  <h1 class='text-5xl tracking-tight leading-none text-teal font-black cursor-pointer select-none'
+  <h1 class='text-5xl tracking-tight leading-none font-black cursor-pointer select-none'
     {{action (toggle 'didClick' this)}}
   >
     {{#if didClick}}
-      <span class='inline-block'>
+      <span class='inline-block text-red'>
         Ember.js, the framework for ambitious developers
       </span>
     {{else}}
-      <span class='inline-block'>
+      <span class='inline-block text-teal'>
         JavaScript is the language of the web
       </span>
     {{/if}}

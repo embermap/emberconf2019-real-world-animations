@@ -13,3 +13,6 @@
 .transition {
   transition: all 0.15s;
 }
+.rotate-180 {
+  transform: rotate(180deg);
+}
