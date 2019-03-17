@@ -18,10 +18,10 @@
   <div class="w-1/2">
     <p class='text-lg font-semibold mb-4'>My tags</p>
 
-    {{#animated-each this.sortedTags use=transition duration=300 as |tag|}}
+    {{#each this.sortedTags as |tag|}}
       <div class='inline-block mr-4 mb-4 text-center px-4 py-3 bg-blue text-white rounded whitespace-no-wrap'>
         {{tag}}
       </div>
-    {{/animated-each}}
+    {{/each}}
   </div>
 </div>

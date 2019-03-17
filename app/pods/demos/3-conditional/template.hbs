@@ -7,7 +7,7 @@
     </div>
 
     <div class='w-3/4 text-lg'>
-      {{#animated-if isShowing use=fade duration=250}}
+      {{#if isShowing}}
         <p class='mb-4'>
           Ember is a JavaScript front-end framework designed to help you build websites with rich and complex user interactions. It does so by providing developers both with many features that are essential to manage complexity in modern web applications, as well as an integrated development toolkit that enables rapid iteration.
         </p>
@@ -18,7 +18,7 @@
         <p>
           Click to read more about Ember!
         </p>
-      {{/animated-if}}
+      {{/if}}
     </div>
   </div>
 </div>

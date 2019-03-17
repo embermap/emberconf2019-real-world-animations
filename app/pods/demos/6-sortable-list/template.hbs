@@ -1,8 +1,7 @@
 <section class='max-w-md mx-auto px-4 mt-16'>
   <ul class='list-reset relative'>
-    {{#animated-each items use=transition duration=250 as |item index|}}
+    {{#each items as |item index|}}
       <li
-        {{fade-up delay=(mult index 50) duration=1000}}
         class='
           w-full bg-{{item.color}}-light rounded shadow text-white p-4 my-4 flex items-center
         '
@@ -25,6 +24,6 @@
           </button>
         </div>
       </li>
-    {{/animated-each}}
+    {{/each}}
   </ul>
 </section>

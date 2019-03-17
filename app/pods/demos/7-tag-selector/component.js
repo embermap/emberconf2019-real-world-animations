@@ -1,27 +1,10 @@
 import Component from '@ember/component';
 import { A } from '@ember/array';
-import { fadeIn, fadeOut } from 'ember-animated/motions/opacity';
 import { computed } from '@ember/object';
-import move from 'ember-animated/motions/move';
 
 export default Component.extend({
 
   // Write your transition here
-
-  * transition({ insertedSprites, removedSprites, keptSprites }) {
-    insertedSprites.forEach(sprite => {
-      fadeIn(sprite);
-    });
-
-    keptSprites.forEach(sprite => {
-      move(sprite);
-      fadeIn(sprite);
-    });
-    
-    removedSprites.forEach(sprite => {
-      fadeOut(sprite);
-    });
-  },
 
   // ----------------------------------------------
 

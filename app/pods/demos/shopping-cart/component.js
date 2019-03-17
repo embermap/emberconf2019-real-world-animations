@@ -1,15 +1,11 @@
 import Component from '@ember/component';
 import { A } from '@ember/array';
-import { fadeIn, fadeOut } from 'ember-animated/motions/opacity';
+import { fadeIn } from 'ember-animated/motions/opacity';
 import resize from 'ember-animated/motions/resize';
-import scale from 'ember-animated/motions/scale';
 import move from 'ember-animated/motions/move';
-import { later } from '@ember/runloop';
-import { wait } from 'ember-animated';
 import { task, timeout } from 'ember-concurrency';
-import { toLeft, toRight } from 'ember-animated/transitions/move-over';
 
-let transition = function*({ duration, insertedSprites, removedSprites, beacons }) {
+let transition = function*({ insertedSprites, removedSprites, beacons }) {
   insertedSprites.forEach(sprite => {
     let id = sprite.element.getAttribute('data-animation-id');
 

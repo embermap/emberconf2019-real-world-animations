@@ -2,7 +2,7 @@
   <h1 class='text-5xl tracking-tight leading-none text-teal font-black cursor-pointer select-none'
     {{action (toggle 'didClick' this)}}
   >
-    {{#animated-if didClick use=transition duration=200}}
+    {{#if didClick}}
       <span class='inline-block'>
         Ember.js, the framework for ambitious developers
       </span>
@@ -10,6 +10,6 @@
       <span class='inline-block'>
         JavaScript is the language of the web
       </span>
-    {{/animated-if}}
+    {{/if}}
   </h1>
 </div>

@@ -6,29 +6,25 @@
         <p>You have {{messages.length}} messages.</p>
       </div>
       <div class="ml-auto text-lg">
-        {{#animated-beacon name='trash'}}
-          <div class="p-4 border-l flex items-center justify-center relative">
-            {{fa-icon 'trash' class='text-grey-darker text-3xl'}}
-            <div class="absolute pin flex justify-center items-center text-white">
-              <span class='text-xs font-semibold pt-2'>
-                {{this.deletedMessages.length}}
-              </span>
-            </div>
+        <div class="p-4 border-l flex items-center justify-center relative">
+          {{fa-icon 'trash' class='text-grey-darker text-3xl'}}
+          <div class="absolute pin flex justify-center items-center text-white">
+            <span class='text-xs font-semibold pt-2'>
+              {{this.deletedMessages.length}}
+            </span>
           </div>
-        {{/animated-beacon}}
+        </div>
       </div>
     </div>
 
     <ul class='list-reset'>
-      <AnimatedContainer>
-        {{#animated-each this.messages use=transition duration=750 as |message|}}
-          <li>
-            <a {{action 'delete' message}} class='font-semibold block px-4 py-2 no-underline text-blue' href="#">
-              Email {{message}}
-            </a>
-          </li>
-        {{/animated-each}}
-      </AnimatedContainer>
+      {{#each this.messages as |message|}}
+        <li>
+          <a {{action 'delete' message}} class='font-semibold block px-4 py-2 no-underline text-blue' href="#">
+            Email {{message}}
+          </a>
+        </li>
+      {{/each}}
     </ul>
   </div>
 
