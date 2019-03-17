@@ -12,25 +12,11 @@
 // opacity: 1;
 
 .fade-up {
-  // will-change: opacity, transform;
   animation-name: fadeUp;
   animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-fill-mode: backwards;
 }
-
-// .fade-up:nth-child(2) {
-//   animation-delay: 0.1s;
-// }
-// .fade-up:nth-child(3) {
-//   animation-delay: 0.2s;
-// }
-// .fade-up:nth-child(4) {
-//   animation-delay: 0.3s;
-// }
-// .fade-up:nth-child(5) {
-//   animation-delay: 0.4s;
-// }
 
 @keyframes fadeUp {
   from {
