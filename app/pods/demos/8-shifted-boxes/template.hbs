@@ -1,0 +1,19 @@
+<div class="mt-16 p-4 max-w-sm mx-auto text-center">
+  <button {{action (toggle 'isShowing' this)}} class="bg-blue text-white px-3 py-2 rounded focus:outline-none focus:shadow-outline">
+    Toggle
+  </button>
+
+  <div class="mt-16 flex -mx-2">
+    {{#animated-if isShowing use=transition duration=500}}
+      <div class="px-2 w-1/3">
+         <div class='h-32 bg-red'></div>
+      </div>
+      <div class="px-2 w-1/3">
+         <div class='h-32 bg-blue'></div>
+      </div>
+      <div class="px-2 w-1/3">
+         <div class='h-32 bg-green'></div>
+      </div>
+    {{/animated-if}}
+  </div>
+</div>
