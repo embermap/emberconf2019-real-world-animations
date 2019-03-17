@@ -1,8 +1,8 @@
-// .fade-up {
-//   transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1) opacity,
-//     3s cubic-bezier(0.075, 0.82, 0.165, 1) transform
-// }
-//
+.fade-up {
+  transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1) opacity,
+    3s cubic-bezier(0.075, 0.82, 0.165, 1) transform
+}
+
 // text-align: center;
 // opacity: 0;
 // transform: translateY(60px);
@@ -11,11 +11,16 @@
 // transform: translateY(0px);
 // opacity: 1;
 
+/*
+  Reference and examples for CSS animations usage:
+
+  https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#Examples
+*/
+
 .fade-up {
   animation-name: fadeUp;
   animation-duration: 3s;
   animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-fill-mode: backwards;
 }
 
 @keyframes fadeUp {
