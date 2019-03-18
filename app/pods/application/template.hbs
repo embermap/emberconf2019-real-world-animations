@@ -6,18 +6,18 @@
       <ol class='pin-t list-reset'>
         {{#each (array
           (hash model='1-article' title='Article' subtitle='Animation with CSS')
-          (hash model='3-conditional' title='Show more' subtitle='Animated If')
-          (hash model='4-expandable-card' title='Expandable card' subtitle='Animated Container')
-          (hash model='5-fading-text' title='Fading text' subtitle='Custom transition, part 1')
-          (hash model='6-sortable-list' title='Sortable list' subtitle='Custom transition, part 2')
-          (hash model='7-tag-selector' title='Tag selector' subtitle='Custom transition, part 3')
-          (hash model='8-shifted-boxes' title='Shifted boxes' subtitle='Sprite methods')
-          (hash model='9-inbox' title='Inbox' subtitle='Beacons')
+          (hash model='2-show-more' title='Show more' subtitle='Animated If')
+          (hash model='3-expandable-card' title='Expandable card' subtitle='Animated Container')
+          (hash model='4-fading-text' title='Fading text' subtitle='Custom transition, part 1')
+          (hash model='5-sortable-list' title='Sortable list' subtitle='Custom transition, part 2')
+          (hash model='6-tag-selector' title='Tag selector' subtitle='Custom transition, part 3')
+          (hash model='7-shifted-boxes' title='Shifted boxes' subtitle='Sprite methods')
+          (hash model='8-inbox' title='Inbox' subtitle='Beacons')
           (hash model='shopping-cart' title='Shopping cart' subtitle='')
           (hash model='medium-image' title='Medium image' subtitle='')
         ) as |route index|}}
-          <li class='relative'>
-            {{#link-to 'show' route.model class='no-underline py-4 pl-6 pr-8 text-grey-darkest inline-block w-full relative z-10 whitespace-no-wrap'}}
+          <li class='relative flex group'>
+            {{#link-to 'show' route.model class='no-underline py-4 pl-6 pr-4 text-grey-darkest inline-block w-full relative z-10 whitespace-no-wrap'}}
               <div class="flex">
                 <span class='pr-2'>{{add index 1}}.</span>
                 <div>
@@ -25,6 +25,17 @@
                   <p class='text-sm text-grey-dark'>{{route.subtitle}}</p>
                 </div>
               </div>
+            {{/link-to}}
+
+            {{#link-to 'show.solution' route.model class=(concat
+                'ml-auto px-3 z-10 text-grey transition flex items-center '
+                (if (is-active "show.solution" route.model)
+                  'text-green'
+                  'text-grey opacity-0 group-hover:opacity-100 hover:text-grey-dark '
+                )
+              )
+            }}
+              {{fa-icon 'eye'}}
             {{/link-to}}
 
             {{#animated-if (is-active 'show' route.model) use=activeNavTransition group='nav' duration=250}}

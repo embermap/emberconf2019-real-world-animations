@@ -7,7 +7,11 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('show', { path: '/:component_name' });
+  this.route('show', { path: '/:component_name' }, function() {
+    this.route('solution')
+  });
+
+  this.route('sandbox');
 });
 
 export default Router;
