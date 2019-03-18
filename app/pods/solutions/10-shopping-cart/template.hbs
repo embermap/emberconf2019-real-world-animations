@@ -26,7 +26,7 @@
   <section class='pt-24 max-w-lg mx-auto flex flex-wrap'>
     {{#each this.items as |index i|}}
 
-      <div class="w-1/3 flex-no-shrink px-2 mb-8" {{fade-upp delay=(mult i 30) duration=1000}}>
+      <div class="w-1/3 flex-no-shrink px-2 mb-8" {{fade-up delay=(mult i 30) duration=1000}}>
         <AnimatedBeacon @name={{concat 'cart-' index}}>
           <div onclick={{action 'addItem' index}}
             class="h-32 bg-white shadow hover:shadow-lg cursor-pointer transition flex items-center justify-center"
