@@ -1,0 +1,31 @@
+<div class="max-w-lg mx-auto mt-16">
+
+  <div class="border rounded">
+    <div class="flex border-b">
+      <div class='p-4'>
+        <p>You have {{messages.length}} messages.</p>
+      </div>
+      <div class="ml-auto text-lg">
+        <div class="p-4 border-l flex items-center justify-center relative">
+          {{fa-icon 'trash' class='text-grey-darker text-3xl'}}
+          <div class="absolute pin flex justify-center items-center text-white">
+            <span class='text-xs font-semibold pt-2'>
+              {{this.deletedMessages.length}}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class='list-reset'>
+      {{#each this.messages as |message|}}
+        <li>
+          <a {{action 'delete' message}} class='font-semibold block px-4 py-2 no-underline text-blue' href="#">
+            Email {{message}}
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+
+</div>

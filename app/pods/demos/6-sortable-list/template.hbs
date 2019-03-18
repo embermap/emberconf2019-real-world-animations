@@ -1,0 +1,29 @@
+<section class='max-w-md mx-auto px-4 mt-16'>
+  <ul class='list-reset relative'>
+    {{#each items as |item index|}}
+      <li
+        class='
+          w-full bg-{{item.color}}-light rounded shadow text-white p-4 my-4 flex items-center
+        '
+      >
+        <span class='text-4xl ml-4'>
+          {{item.name}}
+        </span>
+        <div class='ml-auto'>
+          <button
+            {{action 'moveHigher' item}}
+            class='block px-2 py-1 text-xl rounded text-white hover:bg-{{item.color}}-dark focus:outline-none transition'
+          >
+            {{fa-icon 'caret-up'}}
+          </button>
+          <button
+            {{action 'moveLower' item}}
+            class='mt-4 block px-2 py-1 text-xl rounded text-white hover:bg-{{item.color}}-dark focus:outline-none transition'
+          >
+            {{fa-icon 'caret-down'}}
+          </button>
+        </div>
+      </li>
+    {{/each}}
+  </ul>
+</section>

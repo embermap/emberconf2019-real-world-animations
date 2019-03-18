@@ -1,0 +1,26 @@
+<div class="bg-grey-light pt-32 min-h-screen">
+  <div class="w-128 bg-white mx-auto p-4 shadow-lg rounded overflow-hidden">
+    <button class='text-blue focus:outline-none active:text-blue-darker none py-4' {{action (toggle 'isShowing' this)}}>
+      Show more
+    </button>
+
+    {{#if isShowing}}
+      <p class='mb-4'>
+        Ember is a JavaScript front-end framework designed to help you build websites with rich and complex user interactions. It does so by providing developers both with many features that are essential to manage complexity in modern web applications, as well as an integrated development toolkit that enables rapid iteration.
+      </p>
+      <p>
+        Ember is an Open Source project that relies on the tireless support of individual contributors.
+      </p>
+
+    {{else}}
+
+      <p>
+        Click to read more about Ember!
+      </p>
+    {{/if}}
+  </div>
+
+  <div class="mt-8 w-128 bg-white mx-auto p-4 shadow-lg rounded">
+    <p>Ember Octane is coming 🚀</p>
+  </div>
+</div>

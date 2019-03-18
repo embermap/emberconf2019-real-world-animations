@@ -1,0 +1,5 @@
+{{#if (eq router.currentRoute.localName 'solution')}}
+  {{component (concat 'solutions/' model.component_name)}}
+{{else}}
+  {{component (concat 'demos/' model.component_name)}}
+{{/if}}
