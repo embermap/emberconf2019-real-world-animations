@@ -1,4 +1,15 @@
-# Lecture
+# CSS Transitions
+
+For example,
+
+```css
+.title {
+  transition: opacity 0.5s;
+}
+```
+
+
+# Keyframe at-rule
 
 Here's an example of using @keyframes animations:
 
@@ -15,13 +26,11 @@ Here's an example of using @keyframes animations:
   }
 }
 
-p {
+.title {
   animation-duration: 3s;
   animation-name: slidein;
 }
 ```
-
-# Exercise
 
 In the `styles.scss` file, use
 
@@ -33,13 +42,7 @@ In the `styles.scss` file, use
 to make a @keyframes animation and apply it to the article in the template.
 
 
-# Links
-
-- [MDN Source](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations#Examples)
-
----
-
-# Lecture
+# Web Animations API
 
 Here's an example of using the Web Animations API:
 
@@ -55,14 +58,6 @@ var nommingCake = document.getElementById('eat-me_sprite').animate(
 });
 ```
 
+1. Check out the `fade-up` modifier.
 
-# Exercise
-
-  1. Port your @fadeUp animation from Lesson 1 to a `modifiers/fade-up.js` modifier, and apply it to the article in the template.
-
-  2. Add a delay attribute. Apply it to the title and subsequent paragraphs.
-
-
-# Links
-
-- [Using the Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Using_the_Web_Animations_API)
+2. Add a delay attribute. Apply it to the title and subsequent paragraphs.
