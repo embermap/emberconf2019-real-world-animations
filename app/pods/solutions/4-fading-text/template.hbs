@@ -1,8 +1,9 @@
 <div class="pt-32 max-w-sm mx-auto">
   <h1 class='text-5xl tracking-tight leading-none font-black cursor-pointer select-none'
     {{action (toggle 'didClick' this)}}
+    {{fade-up duration=500}}
   >
-    {{#if didClick}}
+    {{#animated-if didClick use=transition duration=200}}
       <span class='inline-block text-red'>
         Ember.js, the framework for ambitious developers
       </span>
@@ -10,6 +11,6 @@
       <span class='inline-block text-teal'>
         JavaScript is the language of the web
       </span>
-    {{/if}}
+    {{/animated-if}}
   </h1>
 </div>

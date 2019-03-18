@@ -1,8 +1,15 @@
 import Component from '@ember/component';
+import move from 'ember-animated/motions/move';
 
 export default Component.extend({
 
   // Write your transition here
+
+  * transition({ keptSprites }) {
+    keptSprites.forEach(sprite => {
+      move(sprite);
+    });
+  },
 
   // ----------------------------------------------
 
