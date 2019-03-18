@@ -8,9 +8,9 @@
       <div class="pl-3 pr-3">
         <div class="flex mt-2">
           {{#if recentlyAddedItem}}
-            <div class="rounded bg-white shadow flex items-center justify-center z-10" data-animation-id={{recentlyAddedItem}}>
+            <div class="rounded bg-white shadow flex items-center justify-center z-10" data-animation-id={{recentlyAddedItem.item}}>
               <p class="px-2 py-1 whitespace-no-wrap">
-                Item {{recentlyAddedItem}}
+                Item {{recentlyAddedItem.item}}
               </p>
             </div>
           {{/if}}
@@ -20,7 +20,7 @@
   </div>
 
   <section class='pt-24 max-w-lg mx-auto flex flex-wrap'>
-    {{#each items as |index i|}}
+    {{#each this.items as |index i|}}
 
       <div class="w-1/3 flex-no-shrink px-2 mb-8">
         <div onclick={{action 'addItem' index}}
